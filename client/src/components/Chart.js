@@ -20,7 +20,7 @@ ChartJS.register(
   Legend
 );
 
-function Chart() {
+function Chart(props) {
   const options = {
     responsive: true,
     plugins: {
@@ -34,6 +34,8 @@ function Chart() {
     }
   };
 
+  /*
+
   const labels = [
     'January',
     'February',
@@ -43,18 +45,21 @@ function Chart() {
     'June',
     'July'
   ];
-
+*/
   const data = {
-    labels,
+    //labels,
+    labels: props.labels,
     datasets: [
       {
         label: 'Buy-In',
-        data: [10, 100],
+        //data: [10, 100],
+        data: props.dataOne,
         backgroundColor: 'rgba(255, 99, 132, 0.5)'
       },
       {
         label: 'Cash Out',
-        data: [20, -200],
+        //data: [20, -200],
+        data: props.dataTwo,
         backgroundColor: 'rgba(53, 162, 235, 0.5)'
       }
     ]
